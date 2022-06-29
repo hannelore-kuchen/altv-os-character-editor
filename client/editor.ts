@@ -1,5 +1,5 @@
 /// <reference types="@altv/types-client" />
-import * as alt from 'alt';
+import * as alt from 'alt-client';
 import * as native from 'natives';
 import { createPedEditCamera, destroyPedEditCamera, setFov, setZPos } from './camera';
 
@@ -20,6 +20,7 @@ alt.onServer('character:Sync', handleSync);
 alt.onServer(`character:FinishSync`, handleFinishSync);
 
 function handleEdit(_oldData) {
+    alt.log("Trying to open editor");
     oldData = _oldData;
 
     if (!view) {
